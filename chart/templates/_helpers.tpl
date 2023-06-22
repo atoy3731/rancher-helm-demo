@@ -66,7 +66,7 @@ Create the name of the service account to use
 {{- define "gen-certs" -}}
 {{- $ca := genCA "ca" 365 -}}
 {{- $cert := genSignedCert "foobar" nil nil 365 $ca -}}
-cacert.pem: {{ $ca.Cert | b64enc }}
+ca.crt: {{ $ca.Cert | b64enc }}
 tls.crt: {{ $cert.Cert | b64enc }}
 tls.key: {{ $cert.Key | b64enc }}
 {{- end -}}
