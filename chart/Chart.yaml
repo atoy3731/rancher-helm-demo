@@ -1,0 +1,32 @@
+apiVersion: v2
+name: rancher-helm-demo
+description: A demo built around Helm to demonstrate working with it.
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+
+keywords:
+  - helm
+  - demo
+  - rancher
+
+home: https://ranchergovernment.com
+
+sources:
+  - https://github.com/atoy3731/rancher-helm-demo
+
+dependencies:
+  - name: postgresql
+    version: "12.5.8"
+    repository: "oci://registry-1.docker.io/bitnamicharts"
+    condition: config.postgres.embedded
+    alias: postgres
+
+maintainers:
+  - name: Adam Toy
+    email: adam.toy@rancherfederal.com
+
+icon: https://www.rancher.com/assets/img/brand-guidelines/assets/logos/png/cow/rancher-logo-cow-blue.png
+
+annotations:
+  artifacthub.io/prerelease: "true"

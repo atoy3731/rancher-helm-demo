@@ -1,0 +1,2 @@
+# Ignore dependency charts used for local testing
+chart/charts/*
