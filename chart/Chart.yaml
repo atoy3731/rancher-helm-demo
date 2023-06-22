@@ -15,13 +15,6 @@ home: https://ranchergovernment.com
 sources:
   - https://github.com/atoy3731/rancher-helm-demo
 
-dependencies:
-  - name: postgresql
-    version: "12.5.8"
-    repository: "oci://registry-1.docker.io/bitnamicharts"
-    condition: config.postgres.embedded
-    alias: postgres
-
 maintainers:
   - name: Adam Toy
     email: adam.toy@rancherfederal.com
@@ -30,3 +23,10 @@ icon: https://www.rancher.com/assets/img/brand-guidelines/assets/logos/png/cow/r
 
 annotations:
   artifacthub.io/prerelease: "true"
+
+dependencies:
+  - name: postgresql
+    version: "12.5.8"
+    repository: "oci://registry-1.docker.io/bitnamicharts"
+    condition: config.postgres.embedded
+    alias: postgres
